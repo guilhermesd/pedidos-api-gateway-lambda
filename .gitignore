@@ -26,4 +26,54 @@ crash.log
 # IDEs (opcional)
 .vscode/
 .idea/
+.vs/
 *.swp
+
+# ASP.NET / .NET 6/7/8 Projects
+bin/
+obj/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code settings
+.history/
+
+# Rider (JetBrains IDE)
+.idea/
+*.sln.iml
+
+# Logs
+*.log
+
+# User secrets
+**/secrets.json
+
+# ASP.NET static files (gerados via bundling/minification)
+wwwroot/lib/
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.testsettings
+
+# Publish
+**/publish/
+**/out/
+
+# Backup de pacotes
+*.nupkg
+*.snupkg
+
+# Arquivos temporários de build
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Configurações locais do dotnet-ef
+efmigrationlogs/
