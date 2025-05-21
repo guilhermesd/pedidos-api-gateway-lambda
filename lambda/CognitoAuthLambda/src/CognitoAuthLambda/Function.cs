@@ -1,11 +1,9 @@
-using System.Text.Json;
 using Amazon.CognitoIdentityProvider;
 using Amazon.CognitoIdentityProvider.Model;
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
-using System.Net.Http;
-using System.Collections.Generic;
 using Amazon.Lambda.Serialization.SystemTextJson; // Update the namespace to use SystemTextJson
+using System.Text.Json;
 
 [assembly: LambdaSerializer(typeof(DefaultLambdaJsonSerializer))] // Update to use DefaultLambdaJsonSerializer
 
