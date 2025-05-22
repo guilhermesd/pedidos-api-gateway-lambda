@@ -163,7 +163,7 @@ data "archive_file" "lambda_zip" {
 # Criar Lambda
 resource "aws_lambda_function" "auth_lambda" {
   function_name = "cliente-auth-lambda"
-  role          = "arn:aws:iam::439667737553:role/LabRole"
+  role          = "arn:aws:iam::100527548163:role/LabRole"
   handler       = "CognitoAuthLambda::CognitoAuthLambda.Function::FunctionHandler" # Ajuste conforme seu projeto
   runtime       = "dotnet8"
   timeout       = 10
