@@ -28,6 +28,34 @@ resource "aws_api_gateway_resource" "clientes" {
   path_part   = "clientes"
 }
 
+# Recurso "produtos"
+resource "aws_api_gateway_resource" "produtos" {
+  rest_api_id = aws_api_gateway_rest_api.api.id
+  parent_id   = aws_api_gateway_resource.api.id
+  path_part   = "produtos"
+}
+
+# Recurso "pedidos"
+resource "aws_api_gateway_resource" "pedidos" {
+  rest_api_id = aws_api_gateway_rest_api.api.id
+  parent_id   = aws_api_gateway_resource.api.id
+  path_part   = "pedidos"
+}
+
+# Recurso "pagamentos"
+resource "aws_api_gateway_resource" "pagamentos" {
+  rest_api_id = aws_api_gateway_rest_api.api.id
+  parent_id   = aws_api_gateway_resource.api.id
+  path_part   = "pagamentos"
+}
+
+# Recurso "producao"
+resource "aws_api_gateway_resource" "producao" {
+  rest_api_id = aws_api_gateway_rest_api.api.id
+  parent_id   = aws_api_gateway_resource.api.id
+  path_part   = "producao"
+}
+
 # Recurso path parameter "{cpf}" para GET
 resource "aws_api_gateway_resource" "cpf" {
   rest_api_id = aws_api_gateway_rest_api.api.id
@@ -78,6 +106,17 @@ resource "aws_api_gateway_integration" "post_clientes_integration" {
   uri                     = "${var.url_gerenciador}/api/clientes"
   passthrough_behavior    = "WHEN_NO_MATCH"
 }
+
+
+# 3. Criar o método GET no recurso `/produtos`
+resource "aws_api_gateway_method" "get_produtos" {
+  rest_api_id   = aws_api_gateway_rest_api.produtos_api.id
+  resource_id   = aws_api_gateway_resource.produtos.id
+  http_method   = "GET"
+  authorization = "NONE"
+}
+
+
 
 # Criar User Pool Cognito
 resource "aws_cognito_user_pool" "user_pool" {
