@@ -107,17 +107,6 @@ resource "aws_api_gateway_integration" "post_clientes_integration" {
   passthrough_behavior    = "WHEN_NO_MATCH"
 }
 
-
-# 3. Criar o método GET no recurso `/produtos`
-resource "aws_api_gateway_method" "get_produtos" {
-  rest_api_id   = aws_api_gateway_rest_api.produtos_api.id
-  resource_id   = aws_api_gateway_resource.produtos.id
-  http_method   = "GET"
-  authorization = "NONE"
-}
-
-
-
 # Criar User Pool Cognito
 resource "aws_cognito_user_pool" "user_pool" {
   name = "cliente-user-pool"
